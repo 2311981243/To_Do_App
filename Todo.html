@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Task Form</title>
+  <style>
+    /* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+form {
+  background: #fff;
+  padding: 1.6rem 2.4rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(118 75 162 / 0.4);
+  display: flex;
+  gap: 1rem;
+  width: 360px;
+  max-width: 90vw;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.65rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+}
+input[type="text"]:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 6px #6c63ffaa;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(90deg, #6c63ff, #48c6ef);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0 1.6rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgb(108 99 255 /0.3);
+}
+button:hover {
+  background: linear-gradient(90deg, #48c6ef, #6c63ff);
+  box-shadow: 0 6px 14px rgb(72 198 239 /0.5);
+}
+button:active {
+  transform: scale(0.98);
+}
+
+/* Task list styling */
+#list {
+  width: 360px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#list > div {
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+#list > div:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+#list p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  word-break: break-word;
+  flex-grow: 1;
+  padding-right: 1rem;
+}
+
+#list button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  background: #ff6b6b;
+  box-shadow: none;
+  transition: background 0.3s ease;
+}
+#list button:hover {
+  background: #ff4d4d;
+}
+
+  </style>
+</head>
+<body>
+  <form action="/addTask" method="post" onsubmit="add(event)">
+    <input type="text" placeholder="Enter your task" required name="task" id="task"/>
+    <button type="submit">Add Task</button>
+  </form>
+  <div id="list"></div>
+</body>
+<script src="/script.js">
+  </script>
+</html>
