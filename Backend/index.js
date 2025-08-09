@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.static(__dirname))
 app.use(cookieParser())
 app.use(cors({
-    origin:"http://localhost:5000",
+    origin:"https://to-do-app-1-qw5i.onrender.com",
     credentials:true
 }))
 let User=new mongoose.Schema({
