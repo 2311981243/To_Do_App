@@ -7,7 +7,7 @@ const cors=require("cors")
 const app=express()
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-app.use(express.static(__dirname))
+//app.use(express.static(__dirname))
 app.use(cookieParser())
 app.use(cors({
     origin:"https://to-do-app-1-qw5i.onrender.com",
@@ -56,18 +56,18 @@ mongoose.connect(process.env.MONGO_URI)
 .then((val)=>{console.log("Database Connected")})
 .catch((err)=>{console.log("Database Crashed")})
 app
-.get('/',(req,res)=>
-{
-    res.sendFile(__dirname+'/signup.html')
-})
-.get('/login',(req,res)=>
-{
-    res.sendFile(__dirname+'/login.html')
-})
-.get('/application',(req,res)=>
-{
-    res.sendFile(__dirname+'/ToDo.html')
-})
+// .get('/',(req,res)=>
+// {
+//     res.sendFile(__dirname+'/signup.html')
+// })
+// .get('/login',(req,res)=>
+// {
+//     res.sendFile(__dirname+'/login.html')
+// })
+// .get('/application',(req,res)=>
+// {
+//     res.sendFile(__dirname+'/ToDo.html')
+// })
 .post('/signup',async (req,res)=>
 {
     try{
